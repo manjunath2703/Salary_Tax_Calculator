@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary & Tax Calculator</title>
+    <link rel="icon"
+        href="https://cdn.iconscout.com/icon/premium/png-512-thumb/percentage-calculator-icon-svg-download-png-3163985.png?f=webp&w=256">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="A1.CSS">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Salary & Tal Calculator</h1>
+            <p>Calculate your monthly salary, tax liability, and deductions</p>
+        </div>
+
+        <div class="calculator">
+            <div class="input-group">
+                <label for="salary"><i class="fas fa-money-bill-wave"></i> Annual Salary</label>
+                <div class="salary-input-container">
+                    <input type="text" id="salary" placeholder="Enter annual salary">
+                    <select id="salaryUnit">
+                        <option value="lpa">LPA</option>
+                        <option value="cr">Cr</option>
+                        <option value="k">k</option>
+                        <option value="rupees">Rupees</option>
+                    </select>
+                </div>
+                <br>
+                <div class="input-group">
+                    <label for="taxRate"><i class="fa-light fa-percent"></i>Tax Rate(%)</label>
+                    <input type="number" id="taxRate" placeholder="Enter the Percentage" min="0" max="100" step="0.1"
+                        value="10">
+                    <div class="note"><i class="fas fa-info-circle"></i> Enter the tax percentage to be applied (e.g.,
+                        10 for
+                        10%)</div>
+                        <br>
+                    <div class="input-group">
+                        <label for="cabDeduction"><i class="fas fa-car"></i> Monthly Cab Deduction (₹)</label>
+                        <input type="number" placeholder=" Enter mountli cab deduction " min="0" max="10000" step="500"
+                            value="500" id="cabDeduction">
+                        <div class="note"><i class="fas fa-info-circle"></i> Cab deduction is applied to all employees
+                        </div>
+                    </div>
+                    <div class="btn-container">
+                        <button class="btn" id="calculateBtn"> <i class="fas fa-calculator"></i> Calculate Salary
+                            Details</button>
+                    </div>
+                    <div class="results" id="results">
+                        <h2>Salary Breakdown</h2>
+
+                        <div class="result-item">
+                            <span>Annual Salary:</span>
+                            <span id="resultAnnual">₹0</span>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Monthly Salary:</span>
+                            <span id="resultMonthly" class="highlight">₹0</span>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Tax Rate:</span>
+                            <span id="resultTaxRate">0%</span>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Tax Amount:</span>
+                            <span id="resultTax" class="highlight">₹0</span>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Annual Cab Deduction:</span>
+                            <span id="resultCab" class="highlight">₹0</span>
+                        </div>
+
+                        <div class="result-item">
+                            <span>Annual Take Home Salary:</span>
+                            <span id="resultTakeHome" class="highlight">₹0</span>
+                        </div>
+
+                        <div class="summary">
+                            <div class="summary-item">
+                                <div class="summary-value" id="summaryMonthly">₹0</div>
+                                <div class="summary-label">Monthly Take Home</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-value" id="summaryTax">₹0</div>
+                                <div class="summary-label">Monthly Tax</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-value" id="summaryCab">₹0</div>
+                                <div class="summary-label">Monthly Cab</div>
+                            </div>
+                        </div>
+
+                        <div class="tax-info" id="taxInfo">
+                            <h3><i class="fas fa-chart-line"></i> Calculation Details</h3>
+                            <p id="taxMessage">Tax is calculated based on the manually entered tax rate.</p>
+                        </div>
+
+                    </div>
+                    <div class="footer">
+                        <p>This calculator uses the manually entered tax rate and includes cab deduction for all
+                            employees.</p>
+                    </div>
+                </div>
+ <script src="A1.JS"></script>
+</body>
+
+</html>
